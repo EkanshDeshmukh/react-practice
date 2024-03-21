@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
+import Useref from "./components/Useref";
+import Usestate from "./components/Usestate";
+import Hooooks from "./components/Hooooks";
 
 function App() {
   const data = [
@@ -31,33 +34,34 @@ function App() {
   ];
 
   const [realData, setRealData] = useState(data);
-
-  const handleToggleAdded = (index) => {
-    setRealData((prevData) =>
-      prevData.map((item, itemIndex) => {
-        if (itemIndex === index) {
-          return { ...item, added: !item.added };
-        }
-        return item;
-      })
-    );
-  };
+  const handleClick = (index) => {
+    setRealData((prev) => {
+        return prev.map((item, itemindex) => {
+            if (index === itemindex) {
+                return { ...item, added: !item.added };  
+            }
+            return item;
+        });
+    });
+};
 
   return (
     <>
-      <div className="w-full h-screen bg-zinc-300">
-        <Navbar values={realData} />
+      {/* <div className="w-full h-screen bg-zinc-300">
+      <Navbar values={realData} />
         <div className="flex gap-10 justify-center mt-32 items-center">
-          {realData.map((obj, index) => (
-            <Card
-              key={index}
-              values={obj}
-              index={index}
-              handleClick={handleToggleAdded} // Corrected the function name
-            />
-          ))}
+               {realData.map((obj,index)=>(
+               <Card
+                 values={obj}
+                  key={index} 
+                  index={index}
+                  handleClick={handleClick}
+                  />
+               ))}
         </div>
-      </div>
+      </div> */}
+      <Hooooks/>
+      
     </>
   );
 }
