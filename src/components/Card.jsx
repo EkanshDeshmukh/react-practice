@@ -10,7 +10,7 @@ function Card({ values, index, handleClick }) { // Corrected the function name
           <h1 className="text-xl font-bold whitespace-nowrap">{name}</h1>
           <p className="text-gray-600">{profession}</p>
           <button onClick={() => handleClick(index)} className={`px-3 py-2 ${added === false ? "bg-blue-500" : "bg-green-500"} text-white rounded-md mt-10`}>
-            {added ? "friend" : "connect"} {/* Corrected the condition */}
+            {added ? "friend" : "connect"}  
           </button>
         </div>
       </div>
