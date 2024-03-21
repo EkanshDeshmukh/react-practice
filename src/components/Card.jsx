@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ values, index, handleClick }) { // Corrected the function name
+function Card({ values, index, handleClick }) {                
   const { image, profession, name, added } = values;
   return (
     <div className="mt-10">
